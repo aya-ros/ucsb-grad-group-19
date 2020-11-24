@@ -15,10 +15,13 @@ library(here)
 ```{r}
 ucsb_grad <- read_csv(here("data","ucsb_grad_data.csv"))
 ```
+
 ```{r}
 ggplot(data = ucsb_grad, aes(x = year_abbr, y = domestic_enrollment)) + #set x and y axis
   geom_col( #choose geom_col graph type
-    aes(fill = ethnicity) #fill color dependent on race/ethnicity
-    ) 
+    aes(fill = ethnicity), #fill color dependent on race/ethnicity
+    position = "fill" #convert columns from absolute counts to proportions
+    ) +
+  labs(x = "Year", y = "Change in Domestic Graduate Enrollment") #add axis labels
 ```
 
