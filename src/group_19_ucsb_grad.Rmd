@@ -22,6 +22,8 @@ ggplot(data = ucsb_grad, aes(x = year_abbr, y = domestic_enrollment)) + #set x a
     aes(fill = ethnicity), #fill color dependent on race/ethnicity
     position = "fill" #convert columns from absolute counts to proportions
     ) +
-  labs(x = "Year", y = "Change in Domestic Graduate Enrollment") #add axis labels
+  labs(x = "Year", y = "Change in Domestic Graduate Enrollment", #add axis labels
+       title = "Change in domestic graduate enrollment at UCSB by ethnicity from 2008 - 2019") + #adding title
+  theme_minimal() #setting the theme to minimal
 ```
 
